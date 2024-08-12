@@ -1,0 +1,14 @@
+deployment:
+  name: web-server
+  image:
+    name: nginx
+    tag: latest
+    port: 80
+  replicas: 2
+
+service:
+  name: web-service
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 31090
